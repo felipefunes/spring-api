@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: orbital-watcher
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  external-api:
+    connect-timeout-ms: 3000
+    read-timeout-ms: 5000
+    iss-location:
+      base-url: http://api.open-notify.org
+    geocoding:
+      base-url: https://nominatim.openstreetmap.org
+      user-agent: "orbital-watcher/1.0 (contact: ${CONTACT_EMAIL:noreply@example.com})"
+    weather:
+      base-url: https://api.openweathermap.org/data/2.5
+      api-key: ${OPENWEATHER_API_KEY:}
+
+logging:
+  level:
+    root: INFO
+    com.orbitalwatcher: DEBUG
