@@ -36,3 +36,8 @@ out/
 
 ### Environment ###
 .env
+.env.*
+!.env.example
+
+### Claude Code ###
+CLAUDE.local.md
